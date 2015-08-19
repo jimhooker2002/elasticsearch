@@ -69,7 +69,7 @@ public final class DestructiveOperations implements NodeSettingsService.Listener
 
     @Override
     public void onRefreshSettings(Settings settings) {
-        boolean newValue = settings.getAsBoolean("action.destructive_requires_name", destructiveRequiresName);
+        boolean newValue = settings.getAsBoolean(DestructiveOperations.REQUIRES_NAME, destructiveRequiresName);
         if (destructiveRequiresName != newValue) {
             logger.info("updating [action.operate_all_indices] from [{}] to [{}]", destructiveRequiresName, newValue);
             this.destructiveRequiresName = newValue;
